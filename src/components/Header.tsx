@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link, useLocation } from 'react-router-dom'
@@ -32,17 +32,10 @@ export default function Header() {
       <header className="fixed inset-x-0 top-0 z-50" style={{ background: 'transparent', border: 'none' }}>
         <nav aria-label="Global" className="flex items-center justify-between px-6 py-4 lg:px-8">
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5 group">
-            <span className="sr-only">Your Company</span>
-            <div className="flex items-center gap-2">
-              <div className="p-1.5 bg-white/10 rounded-md group-hover:bg-white/20 transition-all duration-300">
-                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-                               <span className="text-white font-semibold text-lg tracking-wide">Demir ve Güvercin</span>
-            </div>
-          </Link>
+                     <Link to="/" className="-m-1.5 p-1.5 group">
+             <span className="sr-only">Your Company</span>
+             <span className="text-white font-bold text-2xl tracking-wide drop-shadow-lg border-b-2 border-white/30 pb-1 hover:border-white transition-all duration-300">Demir & Güvercin</span>
+           </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -80,17 +73,10 @@ export default function Header() {
         <div className="fixed inset-0 z-50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-b from-gray-900 to-gray-800 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
           <div className="flex items-center justify-between">
-            <Link to="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <div className="flex items-center gap-2">
-                <div className="p-1.5 bg-white/10 rounded-md">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-                <span className="text-white font-semibold text-lg tracking-wide">Demir ve Güvercin</span>
-              </div>
-            </Link>
+                         <Link to="/" className="-m-1.5 p-1.5">
+               <span className="sr-only">Your Company</span>
+               <span className="text-white font-bold text-2xl tracking-wide drop-shadow-lg border-b-2 border-white/30 pb-1 hover:border-white transition-all duration-300">Demir & Güvercin</span>
+             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
