@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const navigation = [
   { name: 'ANASAYFA', href: '/' },
@@ -16,8 +17,20 @@ export default function Header() {
   const location = useLocation()
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-b border-gray-700">
-      <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+    <div className="relative overflow-hidden h-screen">
+      {/* Background Image - full screen */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/images/Terazi.jpg')`
+        }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
+      
+      {/* Header */}
+      <header className="fixed inset-x-0 top-0 z-50" style={{ background: 'transparent', border: 'none' }}>
+        <nav aria-label="Global" className="flex items-center justify-between px-6 py-4 lg:px-8">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5 group">
             <span className="sr-only">Your Company</span>
@@ -107,8 +120,68 @@ export default function Header() {
               </div>
             </div>
           </div>
-        </DialogPanel>
-      </Dialog>
-    </header>
-  )
+                 </DialogPanel>
+       </Dialog>
+     </header>
+     
+     {/* Hero Content */}
+     <div className="relative z-10">
+       <div className="relative isolate px-6 lg:px-8">
+         <div className="mx-auto max-w-2xl flex items-center justify-center h-screen">
+           <div className="text-center">
+             <motion.h1 
+               className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl"
+               initial={{ opacity: 0, y: 30 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.4 }}
+             >
+                               DEMİR & GÜVERCİN HUKUK BÜROSU
+             </motion.h1>
+             <motion.p 
+               className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8"
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.6 }}
+             >
+                               Müvekkillerimize yalnızca hukuki destek değil, güven ve çözüm odaklı bir yaklaşım sunuyoruz. Uzman avukat kadromuz en karmaşık davaları titizlikle yürütürken, şeffaflık, dürüstlük ve profesyonellik ilkelerinden asla ödün vermiyoruz. Bizim için her dava, hakların savunulduğu ve adaletin sağlandığı bir süreçtir.
+             </motion.p>
+             <motion.div 
+               className="mt-10 flex items-center justify-center"
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.8 }}
+             >
+               <motion.div
+                 className="text-white"
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.8, delay: 1.0 }}
+               >
+                 <motion.svg 
+                   className="w-10 h-10" 
+                   fill="none" 
+                   stroke="currentColor" 
+                   viewBox="0 0 24 24"
+                   animate={{ y: [0, 10, 0] }}
+                   transition={{ 
+                     duration: 2,
+                     repeat: Infinity,
+                     ease: "easeInOut"
+                   }}
+                 >
+                   <path 
+                     strokeLinecap="round" 
+                     strokeLinejoin="round" 
+                     strokeWidth={2} 
+                     d="M7 13l5 5 5-5" 
+                   />
+                 </motion.svg>
+               </motion.div>
+             </motion.div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ )
 }
