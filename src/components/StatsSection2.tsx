@@ -1,10 +1,10 @@
 export default function StatsSection2() {
      const stats = [
-     { id: 1, name: 'Yıllık Tecrübe', value: '25+' },
-     { id: 2, name: 'Çalışan', value: '100+' },
-     { id: 3, name: 'Başarılı Dava', value: '500+' },
-     { id: 4, name: 'Mutlu Müvekkil', value: '1000+' },
-     { id: 5, name: 'Çalışan', value: '100+' },
+     { id: 1, name: 'Hukuk Alanı', value: '5+' },
+     { id: 2, name: 'Avukat', value: '3' },
+     { id: 3, name: 'Başarılı Dava', value: '50+' },
+     { id: 4, name: 'Mutlu Müvekkil', value: '100+' },
+     { id: 5, name: 'Şehir', value: '2' },
    ]
 
   return (

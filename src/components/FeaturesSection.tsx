@@ -4,7 +4,7 @@ const features = [
   {
     name: 'Uzman Hukuki Danışmanlık',
     description:
-      '25 yıllık deneyimimiz ile hukukun her alanında uzman avukatlarımız size en doğru hukuki çözümleri sunar. Karmaşık hukuki süreçlerinizi basitleştiriyoruz.',
+      'Deneyimli ekibimiz ile hukukun farklı alanlarında uzman avukatlarımız size en doğru hukuki çözümleri sunar. Karmaşık hukuki süreçlerinizi basitleştiriyoruz.',
     icon: ScaleIcon,
   },
   {

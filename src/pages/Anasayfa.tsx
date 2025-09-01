@@ -3,6 +3,7 @@ import FeaturesSection from '../components/FeaturesSection'
 import BusinessServiceSection from '../components/BusinessServiceSection'
 import StatsSection from '../components/StatsSection'
 import StatsSection2 from '../components/StatsSection2'
+import Footer from '../components/Footer'
 
 export default function Anasayfa() {
   return (
@@ -12,6 +13,7 @@ export default function Anasayfa() {
       <FeaturesSection />
       <StatsSection />
       <BusinessServiceSection />
+      <Footer />
     </div>
   )
 }

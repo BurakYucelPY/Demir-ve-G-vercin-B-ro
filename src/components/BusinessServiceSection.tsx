@@ -1,20 +1,30 @@
-import { TruckIcon, ShieldCheckIcon, ArrowsRightLeftIcon } from '@heroicons/react/24/outline'
+import { ScaleIcon, ClockIcon, ChatBubbleLeftRightIcon, ShieldCheckIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
-    name: 'Free shipping',
-    description: "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
-    icon: TruckIcon,
+    name: 'Hızlı Danışmanlık',
+    description: "Hukuki sorularınıza hızlı ve net yanıtlar alın; ilk ön değerlendirme ücretsizdir.",
+    icon: ClockIcon,
   },
   {
-    name: '10-year warranty',
-    description: "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+    name: 'Adil Ücretlendirme',
+    description: "Şeffaf fiyatlandırma ve ön maliyet tahmini ile sürpriz ücretler olmaz.",
+    icon: ScaleIcon,
+  },
+  {
+    name: 'Sürekli İletişim',
+    description: "Davanızın her aşamasında düzenli bilgilendirme sağlar, size özel iletişim kanallarını kullanırız.",
+    icon: ChatBubbleLeftRightIcon,
+  },
+  {
+    name: 'Etkili Savunma',
+    description: "Davalarınızı güçlü delil ve deneyimli savunma stratejileri ile takip ederiz.",
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Exchanges',
-    description: "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
-    icon: ArrowsRightLeftIcon,
+    name: 'Sözleşme ve İnceleme',
+    description: "Sözleşmelerinizi hukuka uygun, riskleri minimize edecek şekilde hazırlar ve inceleriz.",
+    icon: DocumentTextIcon,
   },
 ]
 
@@ -57,22 +67,24 @@ export default function BusinessServiceSection() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
           <div className="flex justify-center lg:justify-end">
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
-              alt="Modern workspace with computer and accessories"
+              src="/images/terazikadın.jpg"
+              alt="Hukuk bürosu çalışma ortamı"
               className="w-full max-w-lg rounded-xl shadow-xl ring-1 ring-gray-400/10 lg:w-[48rem] lg:max-w-none lg:-translate-x-20"
             />
           </div>
           <div className="lg:pr-4 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                We built our business on great customer service
+              <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                Güvenilir Hukuki Danışmanlık
               </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                At the beginning at least, but then we realized we could make a 
-                lot more money if we kinda stopped caring about that. Our new 
-                strategy is to write a bunch of things that look really good in the 
-                headlines, then clarify in the small print but hope people don't 
-                actually read it.
+              <p className="mt-6 text-lg leading-8 text-gray-300">
+                Demir & Güvercin Hukuk Bürosu olarak dava süreçleri, sözleşmeler
+                ve uyuşmazlık çözümünde kapsamlı hukuki destek sağlıyoruz. Her
+                dosyada müvekkil menfaatini önceliklendirerek vakaya özel stratejiler
+                geliştiriyor ve uyguluyoruz. Süreç boyunca şeffaf iletişim ve düzenli
+                bilgilendirme ile zaman ve maliyet etkinliğine önem veriyoruz. Güncel
+                mevzuat ile içtihatları takip ederek titiz analizler yapmak ve haklarınızı
+                etkin şekilde savunmak temel prensibimizdir.
               </p>
             </div>
           </div>
@@ -80,17 +92,17 @@ export default function BusinessServiceSection() {
 
         {/* Features section */}
         <div className="mx-auto mt-32 max-w-7xl sm:mt-40">
-          <div className="mx-auto max-w-2xl lg:mx-auto">
-            <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:gap-y-20 lg:grid-cols-3">
+          <div className="mx-auto max-w-none lg:mx-auto">
+            <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
               {features.map((feature) => (
-                <div key={feature.name} className="flex flex-col items-center text-center">
+                <div key={feature.name} className="flex flex-col items-center text-center px-4">
                   <div className="rounded-md bg-white p-2 ring-1 ring-gray-900/10">
-                    <feature.icon className="h-6 w-6 text-gray-600" aria-hidden="true" />
+                    <feature.icon className="h-6 w-6 text-blue-400" aria-hidden="true" />
                   </div>
-                  <dt className="mt-4 font-semibold text-gray-900 text-lg">
+                  <dt className="mt-4 font-semibold text-white text-lg">
                     {feature.name}
                   </dt>
-                  <dd className="mt-2 leading-7 text-gray-600">
+                  <dd className="mt-2 leading-7 text-gray-300 max-w-[12rem]">
                     {feature.description}
                   </dd>
                 </div>
