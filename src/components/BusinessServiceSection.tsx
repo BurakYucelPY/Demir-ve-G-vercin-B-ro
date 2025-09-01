@@ -29,9 +29,10 @@ const features = [
 ]
 
 export default function BusinessServiceSection() {
+  
   return (
          <div 
-       className="overflow-hidden py-24 sm:py-32 relative"
+       className={`overflow-hidden py-24 sm:py-32 relative`}
        style={{
          background: '#0a0a0a',
          position: 'relative'
@@ -41,8 +42,7 @@ export default function BusinessServiceSection() {
         <div 
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(circle at 20% 30%, rgba(30,58,138,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,215,0,0.1) 0%, transparent 50%)',
-            animation: 'subtlePulse 8s ease-in-out infinite'
+            background: 'radial-gradient(circle at 20% 30%, rgba(30,58,138,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,215,0,0.1) 0%, transparent 50%)'
           }}
         ></div>
         
@@ -50,15 +50,9 @@ export default function BusinessServiceSection() {
         <div className="absolute inset-0 overflow-hidden">
           <div 
             className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"
-            style={{
-              animation: 'lineSweep 12s ease-in-out infinite'
-            }}
           ></div>
           <div 
             className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"
-            style={{
-              animation: 'lineSweep 12s ease-in-out infinite 6s'
-            }}
           ></div>
         </div>
       
@@ -94,8 +88,11 @@ export default function BusinessServiceSection() {
         <div className="mx-auto mt-32 max-w-7xl sm:mt-40">
           <div className="mx-auto max-w-none lg:mx-auto">
             <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-              {features.map((feature) => (
-                <div key={feature.name} className="flex flex-col items-center text-center px-4">
+              {features.map((feature, index) => (
+                <div 
+                  key={feature.name} 
+                  className={`scroll-animate delay-${(index + 1) * 100} flex flex-col items-center text-center px-4`}
+                >
                   <div className="rounded-md bg-white p-2 ring-1 ring-gray-900/10">
                     <feature.icon className="h-6 w-6 text-blue-400" aria-hidden="true" />
                   </div>
