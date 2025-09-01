@@ -21,20 +21,38 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <div 
-      className="overflow-hidden py-24 sm:py-32 relative"
-      style={{
-        background: '#0a0a0a'
-      }}
-    >
-      {/* İnce ışık efekti */}
-      <div 
-        className="absolute inset-0 animate-pulse"
-        style={{
-          background: 'linear-gradient(135deg, transparent 0%, transparent 40%, rgba(255,255,255,0.08) 50%, transparent 60%, transparent 100%)',
-          animation: 'lightSweep 8s ease-in-out infinite'
-        }}
-      ></div>
+         <div 
+       className="overflow-hidden py-24 sm:py-32 relative"
+       style={{
+         background: '#0a0a0a',
+         position: 'relative'
+       }}
+     >
+               {/* Professional background effect */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(circle at 20% 30%, rgba(30,58,138,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,215,0,0.1) 0%, transparent 50%)',
+            animation: 'subtlePulse 8s ease-in-out infinite'
+          }}
+        ></div>
+        
+        {/* Elegant lines */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"
+            style={{
+              animation: 'lineSweep 12s ease-in-out infinite'
+            }}
+          ></div>
+          <div 
+            className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"
+            style={{
+              animation: 'lineSweep 12s ease-in-out infinite 6s'
+            }}
+          ></div>
+        </div>
+      
               <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
