@@ -36,7 +36,7 @@ function AppContent() {
       <LoadingScreen isLoading={isLoading} onLoadingComplete={handleLoadingComplete} />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Anasayfa />} />
+          <Route index element={<Anasayfa key={location.pathname} />} />
           <Route path="hakkimizda" element={<Hakkimizda />} />
           <Route path="hizmetlerimiz" element={<Hizmetlerimiz />} />
           <Route path="iletisim" element={<Iletisim />} />

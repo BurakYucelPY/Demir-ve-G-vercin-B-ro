@@ -15,6 +15,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const animationKey = `animation-${location.pathname}-${Date.now()}`
 
   return (
     <div className="relative overflow-hidden h-screen">
@@ -120,6 +121,7 @@ export default function Header() {
                initial={{ opacity: 0, y: 30 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.8, delay: 0.4 }}
+               key={animationKey}
              >
                                DEMİR & GÜVERCİN HUKUK BÜROSU
              </motion.h1>
@@ -128,6 +130,7 @@ export default function Header() {
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.8, delay: 0.6 }}
+               key={`${animationKey}-desc`}
              >
                                Müvekkillerimize yalnızca hukuki destek değil, güven ve çözüm odaklı bir yaklaşım sunuyoruz. Uzman avukat kadromuz en karmaşık davaları titizlikle yürütürken, şeffaflık, dürüstlük ve profesyonellik ilkelerinden asla ödün vermiyoruz. Bizim için her dava, hakların savunulduğu ve adaletin sağlandığı bir süreçtir.
              </motion.p>
@@ -136,12 +139,14 @@ export default function Header() {
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.8, delay: 0.8 }}
+               key={`${animationKey}-container`}
              >
                <motion.div
                  className="text-white"
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ duration: 0.8, delay: 1.0 }}
+                 key={`${animationKey}-arrow`}
                >
                  <motion.svg 
                    className="w-10 h-10" 

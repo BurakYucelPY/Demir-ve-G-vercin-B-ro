@@ -18,7 +18,7 @@ export default function RealHeader() {
   return (
     <div className="relative">
       {/* Background Section - 30% of viewport height */}
-      <div className="relative h-[30vh] overflow-hidden">
+  <div className="relative h-[45vh] overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
