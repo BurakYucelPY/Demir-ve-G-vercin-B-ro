@@ -87,21 +87,43 @@ export default function BusinessServiceSection() {
         {/* Features section */}
         <div className="mx-auto mt-32 max-w-7xl sm:mt-40">
           <div className="mx-auto max-w-none lg:mx-auto">
-            <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <div className="flex justify-center gap-6">
               {features.map((feature, index) => (
                 <div 
                   key={feature.name} 
-                  className={`scroll-animate delay-${(index + 1) * 100} flex flex-col items-center text-center px-4`}
+                  className={`scroll-animate delay-${(index + 1) * 100} group relative`}
                 >
-                  <div className="rounded-md bg-white p-2 ring-1 ring-gray-900/10">
-                    <feature.icon className="h-6 w-6 text-blue-400" aria-hidden="true" />
+                  {/* Modern kartlar */}
+                  <div className="relative p-8 bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:scale-105 hover:border-blue-400/50 flex flex-col justify-between w-64" style={{ height: '340px' }}>
+                    {/* Üst köşe accent */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-tr-2xl"></div>
+                    
+                    {/* Icon container */}
+                    <div className="relative flex justify-center">
+                      <div className="relative">
+                        {/* Glow effect */}
+                        <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        {/* Icon background */}
+                        <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/30 border border-blue-400/40 shadow-lg">
+                          <feature.icon aria-hidden="true" className="h-10 w-10 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="text-center space-y-3 flex-1 flex flex-col justify-center">
+                      <h3 className="text-xl font-bold text-white group-hover:text-blue-100 transition-colors duration-300">
+                        {feature.name}
+                      </h3>
+                      <div className="h-px w-12 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto opacity-60"></div>
+                      <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+
+                    {/* Alt köşe accent */}
+                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-yellow-500/10 to-transparent rounded-bl-2xl"></div>
                   </div>
-                  <dt className="mt-4 font-semibold text-white text-lg">
-                    {feature.name}
-                  </dt>
-                  <dd className="mt-2 leading-7 text-gray-300 max-w-[12rem]">
-                    {feature.description}
-                  </dd>
                 </div>
               ))}
             </div>
