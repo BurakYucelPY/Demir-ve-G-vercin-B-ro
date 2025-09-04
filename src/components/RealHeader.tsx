@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const navigation = [
   { name: 'ANASAYFA', href: '/' },
@@ -11,7 +12,13 @@ const navigation = [
   { name: 'İLETİŞİM', href: '/iletisim' },
 ]
 
-export default function RealHeader() {
+interface RealHeaderProps {
+  title?: string
+  subtitle?: string
+  description?: string
+}
+
+export default function RealHeader({ title, subtitle, description }: RealHeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
 
@@ -111,6 +118,44 @@ export default function RealHeader() {
             </DialogPanel>
           </Dialog>
         </header>
+        
+        {/* Hero Content - İçerik varsa göster */}
+        {(title || subtitle || description) && (
+          <div className="absolute inset-0 flex items-center justify-center z-40">
+            <div className="text-center px-6 max-w-4xl">
+              {subtitle && (
+                <motion.h2 
+                  className="text-base/7 font-semibold text-blue-400"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                  {subtitle}
+                </motion.h2>
+              )}
+              {title && (
+                <motion.h1 
+                  className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl lg:text-6xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  {title}
+                </motion.h1>
+              )}
+              {description && (
+                <motion.p 
+                  className="mt-6 text-lg/8 text-gray-300 max-w-2xl mx-auto"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                  {description}
+                </motion.p>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
