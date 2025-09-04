@@ -51,20 +51,44 @@ export default function ContactInfoSection() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {contactInfo.map((item, index) => (
               <div 
                 key={item.name}
-                className={`scroll-animate delay-${400 + index * 100} text-center`}
+                className={`scroll-animate delay-${400 + index * 100} group relative`}
               >
-                <div className="flex justify-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-900/20 border border-blue-400/30">
-                    <item.icon aria-hidden="true" className="h-8 w-8 text-blue-400" />
+                {/* Modern kartlar */}
+                <div className="relative h-64 p-8 bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:scale-105 hover:border-blue-400/50 flex flex-col justify-between">
+                  {/* Üst köşe accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-tr-2xl"></div>
+                  
+                  {/* Icon container */}
+                  <div className="relative flex justify-center">
+                    <div className="relative">
+                      {/* Glow effect */}
+                      <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      {/* Icon background */}
+                      <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/30 border border-blue-400/40 shadow-lg">
+                        <item.icon aria-hidden="true" className="h-10 w-10 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Content */}
+                  <div className="text-center space-y-3 flex-1 flex flex-col justify-center">
+                    <h3 className="text-xl font-bold text-white group-hover:text-blue-100 transition-colors duration-300">
+                      {item.name}
+                    </h3>
+                    <div className="h-px w-12 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto opacity-60"></div>
+                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
+                      {item.value}
+                    </p>
+                  </div>
+
+                  {/* Alt köşe accent */}
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-yellow-500/10 to-transparent rounded-bl-2xl"></div>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-white">{item.name}</h3>
-                <p className="mt-2 text-sm text-gray-300">{item.value}</p>
               </div>
             ))}
           </div>

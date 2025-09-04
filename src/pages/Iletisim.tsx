@@ -46,7 +46,6 @@ export default function Iletisim() {
       >
         <RealHeader 
           title="Bizimle İletişime Geçin"
-          subtitle="İletişim Bilgileri"
           description="Hukuki danışmanlık ihtiyaçlarınız için bize ulaşabilirsiniz. Uzman ekibimiz size yardımcı olmaktan memnuniyet duyar."
         />
         <ContactInfoSection />
