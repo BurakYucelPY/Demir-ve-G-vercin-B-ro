@@ -153,27 +153,6 @@ export default function IndividualLegalServices() {
             </div>
           ))}
         </div>
-
-        {/* Call to action */}
-        <div className="text-center">
-          <div className="scroll-animate delay-1000 max-w-3xl mx-auto p-8 bg-gradient-to-r from-blue-900/40 to-blue-800/30 backdrop-blur-lg rounded-2xl border border-blue-600/30">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Bireysel Hukuki Danışmanlığa Başlayın
-            </h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              İlk danışmanlık görüşmesi <span className="text-blue-300 font-semibold">ücretsizdir</span>. 
-              Hukuki sorununuzu değerlendirmek için bizimle iletişime geçin.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300">
-                Ücretsiz Danışmanlık
-              </button>
-              <button className="px-8 py-3 bg-transparent border-2 border-blue-400 hover:border-blue-300 text-blue-300 hover:text-blue-200 font-semibold rounded-lg transition-all duration-300">
-                WhatsApp İletişim
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   )

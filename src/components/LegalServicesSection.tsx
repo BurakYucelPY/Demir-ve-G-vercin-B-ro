@@ -96,9 +96,6 @@ export default function LegalServicesSection() {
           <div className="scroll-animate delay-100 inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 mb-6">
             <span className="text-blue-400 text-sm font-semibold">👤 Bireysel Müvekkiller İçin</span>
           </div>
-          <h2 className="scroll-animate delay-200 text-5xl font-bold tracking-tight text-white sm:text-6xl mb-8 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-            Bireysel Hukuki Hizmetler
-          </h2>
           <p className="scroll-animate delay-300 text-xl leading-8 text-gray-300 max-w-3xl mx-auto">
             Kişisel hukuki ihtiyaçlarınız için kapsamlı danışmanlık ve temsil hizmetleri sunuyoruz. 
             Her alanda uzman kadromuz ile yanınızdayız.
@@ -205,27 +202,6 @@ export default function LegalServicesSection() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Enhanced bottom section */}
-        <div className="mt-20 text-center">
-          <div className="scroll-animate delay-1200 max-w-4xl mx-auto p-10 bg-gradient-to-r from-blue-900/40 via-blue-800/30 to-blue-900/40 backdrop-blur-lg rounded-3xl border border-blue-600/30 shadow-2xl">
-            <h3 className="text-3xl font-bold text-white mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-              Bireysel Hukuki Danışmanlığa Başlayın
-            </h3>
-            <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Uzman hukuk ekibimiz, kişisel hukuki sorunlarınız için size özel stratejiler geliştirir. 
-              <span className="text-blue-300 font-semibold"> İlk danışmanlık görüşmesi ücretsizdir.</span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-10 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl">
-                Ücretsiz Danışmanlık Rezervasyonu
-              </button>
-              <button className="px-10 py-4 bg-transparent border-2 border-blue-400 hover:border-blue-300 hover:bg-blue-500/10 text-blue-300 hover:text-blue-200 font-semibold rounded-xl transition-all duration-300">
-                WhatsApp İletişim
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

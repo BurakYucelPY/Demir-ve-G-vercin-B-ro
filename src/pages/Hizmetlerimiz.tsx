@@ -1,5 +1,4 @@
 import RealHeader from '../components/RealHeader'
-import ServicesHeroSection from '../components/ServicesHeroSection'
 import IndividualLegalServices from '../components/IndividualLegalServices'
 import CorporateLegalServices from '../components/CorporateLegalServices'
 import LitigationServices from '../components/LitigationServices'
@@ -46,11 +45,9 @@ export default function Hizmetlerimiz() {
         className="min-h-screen"
       >
         <RealHeader 
-          title="Hukuki Hizmetlerimiz"
-          subtitle="Kapsamlı Hukuki Danışmanlık ve Temsil"
+          title="Hizmetlerimiz"
           description="Bireysel ve kurumsal müvekkillere, tüm hukuki süreçlerde profesyonel destek sağlıyoruz."
         />
-        <ServicesHeroSection />
         <IndividualLegalServices />
         <CorporateLegalServices />
         <LitigationServices />
