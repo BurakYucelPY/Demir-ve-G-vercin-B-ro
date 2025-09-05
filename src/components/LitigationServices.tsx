@@ -62,25 +62,15 @@ export default function LitigationServices() {
             <span className="text-red-400 font-semibold">Dava ve Takip Hizmetleri</span>
           </div>
           <h2 className="scroll-animate delay-200 text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6">
-            Güçlü Hukuki Savunma
+            Dava Süreci Nasıl İşliyor?
           </h2>
           <p className="scroll-animate delay-300 text-lg leading-8 text-gray-300">
-            Deneyimli kadromuz ve başarılı geçmişimizle, her türlü hukuki uyuşmazlıkta 
-            haklarınızı en etkin şekilde savunuyoruz.
+            Dava sürecinizde size rehberlik edecek adımlarımız
           </p>
         </div>
 
         {/* Process timeline */}
         <div className="mb-24">
-          <div className="text-center mb-16">
-            <h3 className="scroll-animate delay-800 text-2xl font-bold text-white mb-4">
-              Dava Süreci Nasıl İşliyor?
-            </h3>
-            <p className="scroll-animate delay-900 text-gray-300">
-              Dava sürecinizde size rehberlik edecek adımlarımız
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div 

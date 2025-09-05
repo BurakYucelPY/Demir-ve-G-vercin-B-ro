@@ -199,27 +199,6 @@ export default function CorporateLegalServices() {
             </div>
           ))}
         </div>
-
-        {/* Call to action */}
-        <div className="mt-20 text-center">
-          <div className="scroll-animate delay-1000 max-w-4xl mx-auto p-10 bg-gradient-to-r from-yellow-900/40 via-yellow-800/30 to-yellow-900/40 backdrop-blur-lg rounded-2xl border border-yellow-600/30">
-            <h3 className="text-3xl font-bold text-white mb-6">
-              Şirketiniz İçin Hukuki Danışman Arıyorsunuz?
-            </h3>
-            <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Kurumsal hukuki ihtiyaçlarınız için özelleştirilmiş çözümler sunuyoruz. 
-              <span className="text-yellow-300 font-semibold"> Ücretsiz kurumsal analiz görüşmesi</span> için bizimle iletişime geçin.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="px-10 py-4 bg-yellow-600 hover:bg-yellow-700 text-white font-bold rounded-lg transition-all duration-300 text-lg">
-                Kurumsal Danışmanlık Talebi
-              </button>
-              <button className="px-10 py-4 bg-transparent border-2 border-yellow-400 hover:border-yellow-300 text-yellow-300 hover:text-yellow-200 font-semibold rounded-lg transition-all duration-300 text-lg">
-                Referans Projelerimizi İnceleyin
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   )
