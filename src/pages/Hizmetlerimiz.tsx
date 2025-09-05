@@ -1,4 +1,5 @@
 import RealHeader from '../components/RealHeader'
+import ServicesIntroSection from '../components/ServicesIntroSection'
 import IndividualLegalServices from '../components/IndividualLegalServices'
 import CorporateLegalServices from '../components/CorporateLegalServices'
 import LitigationServices from '../components/LitigationServices'
@@ -48,6 +49,7 @@ export default function Hizmetlerimiz() {
           title="Hizmetlerimiz"
           description="Bireysel ve kurumsal müvekkillere, tüm hukuki süreçlerde profesyonel destek sağlıyoruz."
         />
+        <ServicesIntroSection />
         <IndividualLegalServices />
         <CorporateLegalServices />
         <LitigationServices />
