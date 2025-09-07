@@ -56,11 +56,23 @@ export default function CorporateLegalServices() {
     <div 
       className="overflow-hidden py-24 sm:py-32 relative"
       style={{
-        background: '#0a0a0a',
+        backgroundImage: 'url("/images/gokdelenlerrr.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
         position: 'relative'
       }}
     >
-      {/* Background effects */}
+      {/* Dark overlay for better text readability */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.85) 100%)'
+        }}
+      ></div>
+      
+      {/* Additional background effects */}
       <div 
         className="absolute inset-0"
         style={{
