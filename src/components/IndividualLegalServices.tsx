@@ -82,8 +82,8 @@ export default function IndividualLegalServices() {
       
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"></div>
-        <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-l from-transparent via-blue-300/15 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+        <div className="absolute bottom-0 right-0 w-full h-2 bg-gradient-to-l from-transparent via-blue-300/40 to-transparent"></div>
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">

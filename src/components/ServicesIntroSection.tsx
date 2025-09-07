@@ -40,10 +40,10 @@ export default function ServicesIntroSection() {
         {/* Elegant lines */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
-            className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"
+            className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent"
           ></div>
           <div 
-            className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"
+            className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"
           ></div>
         </div>
       

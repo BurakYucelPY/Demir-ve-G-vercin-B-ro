@@ -91,9 +91,9 @@ export default function CorporateLegalServices() {
 
       {/* Decorative lines */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-1/3 h-px bg-gradient-to-r from-yellow-400/30 to-transparent"></div>
-        <div className="absolute top-0 right-0 w-1/3 h-px bg-gradient-to-l from-yellow-400/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-1/4 w-1/2 h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-1/3 h-2 bg-gradient-to-r from-yellow-400/60 to-transparent"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-2 bg-gradient-to-l from-yellow-400/60 to-transparent"></div>
+        <div className="absolute bottom-0 left-1/4 w-1/2 h-2 bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent"></div>
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">

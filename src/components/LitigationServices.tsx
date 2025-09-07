@@ -91,7 +91,7 @@ export default function LitigationServices() {
               >
                 {/* Connection line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-red-400/50 to-transparent z-0"></div>
+                  <div className="hidden lg:block absolute top-16 left-full w-full h-2 bg-gradient-to-r from-red-400/80 to-transparent z-0"></div>
                 )}
                 
                 <div className="relative z-10 text-center">
