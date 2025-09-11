@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 const navigation = [
   { name: 'ANASAYFA', href: '/' },
   { name: 'HİZMETLERİMİZ', href: '/hizmetlerimiz' },
-  { name: 'MAKALELER', href: '/makaleler' },
+  { name: 'EKİBİMİZ', href: '/ekibimiz' },
   { name: 'HAKKIMIZDA', href: '/hakkimizda' },
   { name: 'İLETİŞİM', href: '/iletisim' },
 ]

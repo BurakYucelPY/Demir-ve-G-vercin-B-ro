@@ -5,7 +5,7 @@ import Anasayfa from './pages/Anasayfa'
 import Hakkimizda from './pages/Hakkimizda'
 import Hizmetlerimiz from './pages/Hizmetlerimiz'
 import Iletisim from './pages/Iletisim'
-import Makaleler from './pages/Makaleler'
+import Ekibimiz from './pages/Ekibimiz'
 import LoadingScreen from './components/LoadingScreen'
 import './App.css'
 
@@ -40,7 +40,7 @@ function AppContent() {
           <Route path="hakkimizda" element={<Hakkimizda />} />
           <Route path="hizmetlerimiz" element={<Hizmetlerimiz />} />
           <Route path="iletisim" element={<Iletisim />} />
-          <Route path="makaleler" element={<Makaleler />} />
+          <Route path="ekibimiz" element={<Ekibimiz />} />
         </Route>
       </Routes>
     </>
