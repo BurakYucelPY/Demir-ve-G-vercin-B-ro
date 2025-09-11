@@ -1,6 +1,12 @@
 import RealHeader from '../components/RealHeader'
+import { useEffect } from 'react'
 
 export default function Hakkimizda() {
+  useEffect(() => {
+    // Sayfa açıldığında en üste scroll et
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [])
+
   return (
     <div className="min-h-screen bg-white">
       <RealHeader title="Hakkımızda" />

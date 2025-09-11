@@ -11,6 +11,9 @@ export default function Iletisim() {
   const location = useLocation()
   
   useEffect(() => {
+    // Sayfa açıldığında en üste scroll et
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    
     // scroll-animate elementlerini yeniden observe et
     const observeElements = () => {
       const observer = new IntersectionObserver((entries) => {
