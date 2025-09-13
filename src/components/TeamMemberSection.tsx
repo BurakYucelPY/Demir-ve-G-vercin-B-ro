@@ -15,6 +15,7 @@ interface TeamMember {
   icon: any
   phone: string
   email: string
+  image: string
 }
 
 const teamMembers: TeamMember[] = [
@@ -36,7 +37,8 @@ const teamMembers: TeamMember[] = [
     ],
     icon: ScaleIcon,
     phone: '+90 212 555 0101',
-    email: 'mehmet.demir@demirguvercin.com'
+    email: 'mehmet.demir@demirguvercin.com',
+    image: '/images/terazikadın.jpg'
   },
   {
     id: 2,
@@ -56,7 +58,8 @@ const teamMembers: TeamMember[] = [
     ],
     icon: ClockIcon,
     phone: '+90 212 555 0102',
-    email: 'ayse.guvercin@demirguvercin.com'
+    email: 'ayse.guvercin@demirguvercin.com',
+    image: '/images/demirguvercin (1)-Photoroom.png'
   }
 ]
 
@@ -112,7 +115,7 @@ export default function TeamMemberSection() {
                 <div
                   key={member.id}
                   onClick={() => openModal(member)}
-                  className="cursor-pointer group relative h-96 transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
+                  className="cursor-pointer group relative h-[450px] transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
                 >
                   <div className="relative h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl border border-gray-700/50 shadow-2xl overflow-hidden">
                     {/* Hover glow effect */}
@@ -120,35 +123,36 @@ export default function TeamMemberSection() {
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-yellow-500/10 blur-xl"></div>
                     </div>
 
-                    {/* Top corner accent */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-yellow-500/20 to-transparent rounded-bl-3xl"></div>
-
                     {/* Card Content */}
-                    <div className="relative h-full flex flex-col p-8">
-                      {/* Top section with icon */}
-                      <div className="flex justify-center mb-6">
-                        {/* Icon background */}
-                        <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/30 border border-blue-400/40 shadow-lg">
-                          <member.icon aria-hidden="true" className="h-10 w-10 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+                    <div className="relative h-full flex flex-col">
+                      {/* Profile Image - Takes most of the card */}
+                      <div className="flex-1 relative overflow-hidden rounded-t-3xl">
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          onError={(e) => {
+                            e.currentTarget.src = `https://images.unsplash.com/photo-${member.id === 1 ? '1507003211169-0a1dd7228f2d' : '1594736797933-d0501ba2fe65'}?w=600&h=600&fit=crop&crop=face`
+                          }}
+                        />
+                        {/* Gradient overlay for text readability */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        
+                        {/* Professional icon badge */}
+                        <div className="absolute top-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm border border-white/20">
+                          <member.icon aria-hidden="true" className="h-6 w-6 text-white" />
                         </div>
                       </div>
 
-                      {/* Content */}
-                      <div className="text-center space-y-3 flex-1 flex flex-col justify-center">
-                        <h3 className="text-xl font-bold text-white group-hover:text-blue-100 transition-colors duration-300">
+                      {/* Name section - Bottom part */}
+                      <div className="p-6 bg-gradient-to-r from-gray-900 to-gray-800">
+                        <h3 className="text-2xl font-bold text-white group-hover:text-blue-100 transition-colors duration-300 text-center">
                           {member.name}
                         </h3>
-                        <p className="text-blue-300 font-semibold text-sm">
+                        <p className="text-blue-300 font-semibold text-center mt-2">
                           {member.title}
                         </p>
-                        <div className="h-px w-12 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto opacity-60"></div>
-                        <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed text-sm">
-                          {member.shortDescription}
-                        </p>
                       </div>
-
-                      {/* Alt köşe accent */}
-                      <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-yellow-500/10 to-transparent rounded-bl-2xl"></div>
                     </div>
                   </div>
                 </div>
@@ -186,9 +190,12 @@ export default function TeamMemberSection() {
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-500 to-yellow-400 rounded-3xl p-1 transform rotate-3">
                         <div className="w-full h-full bg-gray-900 rounded-3xl overflow-hidden">
                           <img 
-                            src="/images/terazikadın.jpg"
+                            src={selectedMember.image}
                             alt={selectedMember.name}
                             className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.src = `https://images.unsplash.com/photo-${selectedMember.id === 1 ? '1507003211169-0a1dd7228f2d' : '1594736797933-d0501ba2fe65'}?w=600&h=600&fit=crop&crop=face`
+                            }}
                           />
                         </div>
                       </div>
