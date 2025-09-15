@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "UNLICENSED",
+  "author": "Neuronberg",
+  "description": "Demir & Güvercin Hukuk Bürosu - Modern hukuk bürosu web sitesi",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
