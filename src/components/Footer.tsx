@@ -165,7 +165,7 @@ export default function Footer() {
         </div>
   <div className="mt-8 border-t border-gray-700 pt-6 sm:mt-10 lg:mt-12">
           <p className="text-base leading-5 text-gray-400">
-            &copy; 2024 Demir & Güvercin Hukuk Bürosu. Tüm hakları saklıdır.
+            &copy; 2025 Neuronberg. Tüm hakları saklıdır.
           </p>
         </div>
       </div>
