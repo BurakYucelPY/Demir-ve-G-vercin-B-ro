@@ -5,7 +5,7 @@ const services = [
     name: 'Aile Hukuku',
     description: 'Boşanma, velayet, nafaka ve mal paylaşımı konularında uzman hukuki destek',
     icon: HomeIcon,
-    features: ['Boşanma Davaları', 'Velayet ve Nafaka', 'Mal Paylaşımı', 'Aile Danışmanlığı'],
+    features: ['Boşanma Davaları', 'Velayet ve Nafaka'],
     price: '2.500₺+',
     duration: '6-12 ay'
   },
@@ -13,7 +13,7 @@ const services = [
     name: 'Miras Hukuku',
     description: 'Miras paylaşımı, vasiyet ve miras anlaşmazlıklarında profesyonel çözümler',
     icon: ScaleIcon,
-    features: ['Miras Paylaşımı', 'Vasiyet Düzenleme', 'Mirastan Feragat', 'Tereke Tasfiyesi'],
+    features: ['Miras Paylaşımı', 'Vasiyet Düzenleme'],
     price: '1.800₺+',
     duration: '4-8 ay'
   },
@@ -21,7 +21,7 @@ const services = [
     name: 'İş Hukuku',
     description: 'İşçi-işveren anlaşmazlıkları ve iş sözleşmeleri konularında danışmanlık',
     icon: UserGroupIcon,
-    features: ['İş Sözleşmeleri', 'Kıdem Tazminatı', 'Mobbing Davaları', 'İşe İade'],
+    features: ['İş Sözleşmeleri', 'Kıdem Tazminatı'],
     price: '1.500₺+',
     duration: '3-6 ay'
   },
@@ -29,7 +29,7 @@ const services = [
     name: 'Ceza Hukuku',
     description: 'Ceza davalarında savunma ve suç duyuruları konularında uzman temsil',
     icon: ShieldCheckIcon,
-    features: ['Ceza Davası Savunması', 'Suç Duyuruları', 'Uzlaştırma', 'Beraat Süreçleri'],
+    features: ['Ceza Davası Savunması', 'Suç Duyuruları'],
     price: '3.000₺+',
     duration: '8-18 ay'
   },
@@ -37,7 +37,7 @@ const services = [
     name: 'Borçlar Hukuku',
     description: 'Alacak-verecek anlaşmazlıkları ve sözleşme ihlalleri konularında destek',
     icon: CurrencyDollarIcon,
-    features: ['Alacak Takibi', 'Sözleşme İhlali', 'Tazminat Davaları', 'İcra Takipleri'],
+    features: ['Alacak Takibi', 'Sözleşme İhlali'],
     price: '2.000₺+',
     duration: '4-10 ay'
   },
@@ -45,7 +45,7 @@ const services = [
     name: 'Sözleşme Hukuku',
     description: 'Sözleşme hazırlama, inceleme ve hukuki risk analizleri',
     icon: DocumentTextIcon,
-    features: ['Sözleşme Hazırlama', 'Hukuki İnceleme', 'Risk Analizi', 'Müzakere Desteği'],
+    features: ['Sözleşme Hazırlama', 'Hukuki İnceleme'],
     price: '800₺+',
     duration: '1-3 hafta'
   }

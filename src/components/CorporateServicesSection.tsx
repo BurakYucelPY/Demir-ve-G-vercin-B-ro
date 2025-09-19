@@ -7,11 +7,8 @@ const corporateServices = [
     icon: BuildingOfficeIcon,
     features: [
       'Limited ve Anonim Şirket Kuruluşu',
-      'Ana Sözleşme Hazırlama ve Optimizasyonu', 
-      'Sermaye Yapısı Planlama',
-      'Ticaret Sicili ve Vergi Dairesi İşlemleri',
-      'Ortaklık Anlaşmaları',
-      'Şirket Birleşme ve Devralmalar'
+      'Ana Sözleşme Hazırlama', 
+      'Ortaklık Anlaşmaları'
     ],
     processSteps: ['Yapı Analizi', 'Sözleşme Hazırlığı', 'Resmi İşlemler', 'Tescil'],
     timeline: '2-4 hafta',
@@ -22,12 +19,9 @@ const corporateServices = [
     description: "KVKK, GDPR ve sektörel mevzuatlara uyum sağlayarak şirketinizi hukuki risklerden koruyoruz.",
     icon: ShieldExclamationIcon,
     features: [
-      'KVKK ve GDPR Uyumluluk Danışmanlığı',
+      'KVKK ve GDPR Uyumluluk',
       'Veri İşleme Politikaları',
-      'İş Güvenliği Mevzuat Uyumu',
-      'Sektörel Düzenleme Analizi',
-      'Compliance Programları',
-      'Düzenli Uyumluluk Denetimleri'
+      'Compliance Programları'
     ],
     processSteps: ['Risk Analizi', 'Politika Geliştirme', 'Uygulama', 'İzleme'],
     timeline: '4-8 hafta',
@@ -39,11 +33,8 @@ const corporateServices = [
     icon: DocumentCheckIcon,
     features: [
       'Tedarikçi ve Distribütör Sözleşmeleri',
-      'Müşteri Sözleşmeleri ve Genel Şartlar',
-      'Franchise ve Lisans Anlaşmaları',
-      'Ortaklık ve Joint Venture Sözleşmeleri',
-      'Ticari Uyuşmazlık Çözümü',
-      'Sözleşme Portföyü Yönetimi'
+      'Müşteri Sözleşmeleri',
+      'Ticari Uyuşmazlık Çözümü'
     ],
     processSteps: ['İhtiyaç Analizi', 'Taslak Hazırlama', 'Müzakere', 'Finalizasyon'],
     timeline: '1-3 hafta',
