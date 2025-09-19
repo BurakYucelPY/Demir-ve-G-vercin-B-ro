@@ -39,7 +39,7 @@ export default function MapSection() {
         <div className="scroll-animate delay-400 mt-16">
           <div className="rounded-xl overflow-hidden border border-gray-700/50 shadow-2xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.3936073336077!2d32.8597419!3d39.9337176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xaa18c4f060c29a4!2sAnkara%2C%20T%C3%BCrkiye!5e0!3m2!1str!2str!4v1693834567890!5m2!1str!2str"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.829647848596!2d32.4838!3d37.8734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d0858a0b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sAraplar%2C%20Ankara%20Cd.%20No%3A76%2C%2042050%20Karatay%2FKonya%2C%20T%C3%BCrkiye!5e0!3m2!1str!2str!4v1693834567890!5m2!1str!2str"
               width="100%"
               height="450"
               style={{ border: 0 }}
