@@ -169,7 +169,7 @@ export default function TeamMemberSection() {
           onClick={closeModal}
         >
           <div 
-            className="relative bg-gray-900/95 backdrop-blur-lg rounded-2xl border border-gray-700/50 shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            className="relative bg-gray-900/95 backdrop-blur-lg rounded-2xl border border-gray-700/50 shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -181,30 +181,35 @@ export default function TeamMemberSection() {
             </button>
 
             <div className="p-8">
-              {/* Profile Section */}
+              {/* Header */}
               <div className="text-center mb-8">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-blue-500/20 to-yellow-500/20 rounded-full border border-blue-400/30 flex items-center justify-center">
-                  <selectedMember.icon className="w-16 h-16 text-blue-400" />
+                <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-blue-500/20 to-yellow-500/20 rounded-full border border-blue-400/30 flex items-center justify-center">
+                  <selectedMember.icon className="w-12 h-12 text-blue-400" />
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-2">
                   {selectedMember.name}
                 </h2>
-                <p className="text-blue-300 font-semibold text-lg mb-4">
+                <p className="text-blue-300 font-semibold mb-4">
                   {selectedMember.title}
                 </p>
+              </div>
+              
+              {/* Hakkında */}
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-white mb-3">Hakkında</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  {selectedMember.shortDescription}
+                  {selectedMember.fullBio}
                 </p>
               </div>
               
               {/* Uzmanlık Alanları */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-4">Uzmanlık Alanları</h3>
-                <div className="flex flex-wrap gap-3">
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-white mb-3">Uzmanlık Alanları</h3>
+                <div className="flex flex-wrap gap-2">
                   {selectedMember.specializations.map((spec: string, index: number) => (
                     <span 
                       key={index}
-                      className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-400/30"
+                      className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-lg text-sm border border-blue-400/30"
                     >
                       {spec}
                     </span>
@@ -212,18 +217,53 @@ export default function TeamMemberSection() {
                 </div>
               </div>
               
+              {/* Eğitim ve Diller */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="p-4 bg-gray-800/30 rounded-lg">
+                  <h4 className="text-white font-semibold mb-2">Eğitim</h4>
+                  <p className="text-gray-300 text-sm">{selectedMember.education}</p>
+                  <p className="text-gray-400 text-xs mt-1">{selectedMember.barAssociation}</p>
+                </div>
+                <div className="p-4 bg-gray-800/30 rounded-lg">
+                  <h4 className="text-white font-semibold mb-2">Diller</h4>
+                  <div className="flex flex-wrap gap-1">
+                    {selectedMember.languages.map((lang: string, langIndex: number) => (
+                      <span 
+                        key={langIndex}
+                        className="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs"
+                      >
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Başarılar */}
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-white mb-3">Başarılar</h3>
+                <div className="space-y-2">
+                  {selectedMember.achievements.map((achievement: string, achievIndex: number) => (
+                    <div key={achievIndex} className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-gray-300 text-sm">{achievement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
               {/* İletişim */}
               <div className="border-t border-gray-700/50 pt-6">
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <a 
                     href={`tel:${selectedMember.phone}`}
-                    className="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 text-center"
+                    className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 text-center text-sm"
                   >
-                    📞 Ara
+                    📞 {selectedMember.phone}
                   </a>
                   <a 
                     href={`mailto:${selectedMember.email}`}
-                    className="flex-1 px-6 py-3 bg-transparent border border-yellow-400 hover:border-yellow-300 text-yellow-300 font-semibold rounded-lg transition-all duration-300 text-center"
+                    className="px-4 py-3 bg-transparent border border-yellow-400 hover:border-yellow-300 text-yellow-300 font-semibold rounded-lg transition-all duration-300 text-center text-sm"
                   >
                     ✉️ Mail Gönder
                   </a>
