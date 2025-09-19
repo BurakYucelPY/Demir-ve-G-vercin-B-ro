@@ -1,4 +1,4 @@
-import { ScaleIcon, ClockIcon, XMarkIcon, UserIcon, AcademicCapIcon, GlobeAltIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
+import { ScaleIcon, ClockIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 
 interface TeamMember {
@@ -169,151 +169,64 @@ export default function TeamMemberSection() {
           onClick={closeModal}
         >
           <div 
-            className="relative bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-lg rounded-3xl border border-gray-700/50 shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-300"
+            className="relative bg-gray-900/95 backdrop-blur-lg rounded-2xl border border-gray-700/50 shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               onClick={closeModal}
-              className="absolute top-6 right-6 p-2 bg-gray-800/50 hover:bg-gray-700/50 rounded-full transition-all duration-300 z-10"
+              className="absolute top-4 right-4 p-2 bg-gray-800/50 hover:bg-gray-700/50 rounded-full transition-all duration-300 z-10"
             >
               <XMarkIcon className="w-6 h-6 text-gray-400 hover:text-white" />
             </button>
 
-            <div className="p-8 lg:p-12">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                
-                {/* Profile Photo */}
-                <div className="lg:col-span-1">
-                  <div className="relative">
-                    <div className="relative w-full aspect-square max-w-sm mx-auto">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-500 to-yellow-400 rounded-3xl p-1 transform rotate-3">
-                        <div className="w-full h-full bg-gray-900 rounded-3xl overflow-hidden">
-                          <img 
-                            src={selectedMember.image}
-                            alt={selectedMember.name}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              e.currentTarget.src = `https://images.unsplash.com/photo-${selectedMember.id === 1 ? '1507003211169-0a1dd7228f2d' : '1594736797933-d0501ba2fe65'}?w=600&h=600&fit=crop&crop=face`
-                            }}
-                          />
-                        </div>
-                      </div>
-                      
-                      {/* Professional Badge */}
-                      <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full border-4 border-gray-900 flex items-center justify-center shadow-xl">
-                        <ScaleIcon className="w-8 h-8 text-gray-900" />
-                      </div>
-                    </div>
-                  </div>
+            <div className="p-8">
+              {/* Profile Section */}
+              <div className="text-center mb-8">
+                <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-blue-500/20 to-yellow-500/20 rounded-full border border-blue-400/30 flex items-center justify-center">
+                  <selectedMember.icon className="w-16 h-16 text-blue-400" />
                 </div>
-                
-                {/* Detailed Information */}
-                <div className="lg:col-span-2 space-y-8">
-                  
-                  {/* Header */}
-                  <div>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="h-1 w-16 bg-gradient-to-r from-blue-400 to-yellow-400 rounded-full"></div>
-                      <span className="text-blue-300 font-bold text-lg uppercase tracking-wider">{selectedMember.title}</span>
-                    </div>
-                    
-                    <h2 className="text-5xl font-bold text-white mb-4">
-                      {selectedMember.name}
-                    </h2>
-                  </div>
-                  
-                  {/* Biography */}
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                      <UserIcon className="w-6 h-6 text-blue-400 mr-3" />
-                      Hakkında
-                    </h3>
-                    <p className="text-gray-300 text-lg leading-relaxed">
-                      {selectedMember.fullBio}
-                    </p>
-                  </div>
-                  
-                  {/* Specializations */}
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                      <ScaleIcon className="w-6 h-6 text-yellow-400 mr-3" />
-                      Uzmanlık Alanları
-                    </h3>
-                    <div className="flex flex-wrap gap-3">
-                      {selectedMember.specializations.map((spec: string, index: number) => (
-                        <span 
-                          key={index}
-                          className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-yellow-500/20 text-white rounded-full text-sm font-semibold border border-blue-400/30"
-                        >
-                          {spec}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Education & Languages */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="p-6 bg-gray-800/50 rounded-2xl border border-gray-700/50">
-                      <div className="flex items-center mb-3">
-                        <AcademicCapIcon className="w-6 h-6 text-blue-400 mr-3" />
-                        <span className="text-blue-300 font-bold text-sm uppercase tracking-wider">Eğitim</span>
-                      </div>
-                      <p className="text-white font-semibold text-lg">{selectedMember.education}</p>
-                      <p className="text-gray-400 text-sm mt-1">{selectedMember.barAssociation}</p>
-                    </div>
-                    
-                    <div className="p-6 bg-gray-800/50 rounded-2xl border border-gray-700/50">
-                      <div className="flex items-center mb-3">
-                        <GlobeAltIcon className="w-6 h-6 text-yellow-400 mr-3" />
-                        <span className="text-yellow-300 font-bold text-sm uppercase tracking-wider">Diller</span>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedMember.languages.map((lang: string, langIndex: number) => (
-                          <span 
-                            key={langIndex}
-                            className="px-3 py-1 bg-gray-700 text-gray-300 rounded-lg text-sm"
-                          >
-                            {lang}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Achievements */}
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                      <ShieldCheckIcon className="w-6 h-6 text-green-400 mr-3" />
-                      Başarılar & Sertifikalar
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {selectedMember.achievements.map((achievement: string, achievIndex: number) => (
-                        <div key={achievIndex} className="flex items-start gap-3 p-4 bg-gray-800/30 rounded-xl border border-gray-700/30">
-                          <div className="w-3 h-3 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-gray-300 text-sm leading-relaxed">{achievement}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Contact */}
-                  <div className="pt-6 border-t border-gray-700/50">
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <a 
-                        href={`tel:${selectedMember.phone}`}
-                        className="flex-1 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold rounded-2xl transition-all duration-300 text-center shadow-lg transform hover:scale-105"
-                      >
-                        📞 {selectedMember.phone}
-                      </a>
-                      <a 
-                        href={`mailto:${selectedMember.email}`}
-                        className="flex-1 px-6 py-4 bg-transparent border-2 border-yellow-400 hover:border-yellow-300 text-yellow-300 hover:text-yellow-200 font-bold rounded-2xl transition-all duration-300 text-center transform hover:scale-105"
-                      >
-                        ✉️ {selectedMember.email}
-                      </a>
-                    </div>
-                  </div>
+                <h2 className="text-3xl font-bold text-white mb-2">
+                  {selectedMember.name}
+                </h2>
+                <p className="text-blue-300 font-semibold text-lg mb-4">
+                  {selectedMember.title}
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  {selectedMember.shortDescription}
+                </p>
+              </div>
+              
+              {/* Uzmanlık Alanları */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-white mb-4">Uzmanlık Alanları</h3>
+                <div className="flex flex-wrap gap-3">
+                  {selectedMember.specializations.map((spec: string, index: number) => (
+                    <span 
+                      key={index}
+                      className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-400/30"
+                    >
+                      {spec}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              {/* İletişim */}
+              <div className="border-t border-gray-700/50 pt-6">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href={`tel:${selectedMember.phone}`}
+                    className="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 text-center"
+                  >
+                    📞 Ara
+                  </a>
+                  <a 
+                    href={`mailto:${selectedMember.email}`}
+                    className="flex-1 px-6 py-3 bg-transparent border border-yellow-400 hover:border-yellow-300 text-yellow-300 font-semibold rounded-lg transition-all duration-300 text-center"
+                  >
+                    ✉️ Mail Gönder
+                  </a>
                 </div>
               </div>
             </div>
