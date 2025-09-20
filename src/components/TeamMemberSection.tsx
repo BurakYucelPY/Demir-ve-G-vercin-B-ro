@@ -76,6 +76,27 @@ export default function TeamMemberSection() {
     document.body.style.overflow = 'unset'
   }
 
+  const generateVCard = (member: TeamMember) => {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${member.name}
+ORG:Demir & Güvercin Hukuk Bürosu
+TITLE:${member.title}
+TEL:${member.phone}
+EMAIL:${member.email}
+ADR:;;Araplar, Ankara Cd. No:76;Karatay;Konya;42050;Türkiye
+NOTE:${member.specializations.join(', ')} uzmanı
+END:VCARD`
+
+    const blob = new Blob([vcard], { type: 'text/vcard' })
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `${member.name.replace(/\s+/g, '_')}.vcf`
+    link.click()
+    window.URL.revokeObjectURL(url)
+  }
+
   return (
     <>
       <div 
@@ -254,19 +275,37 @@ export default function TeamMemberSection() {
               
               {/* İletişim */}
               <div className="border-t border-gray-700/50 pt-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <h4 className="text-lg font-semibold text-white mb-4 text-center">İletişim</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <a 
                     href={`tel:${selectedMember.phone}`}
-                    className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 text-center text-sm"
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600/80 backdrop-blur-md border border-blue-400/20 hover:bg-blue-700/90 hover:border-blue-300/30 text-white font-medium rounded-lg transition-all duration-300 text-sm"
                   >
-                    📞 {selectedMember.phone}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>Ara</span>
                   </a>
+                  
                   <a 
                     href={`mailto:${selectedMember.email}`}
-                    className="px-4 py-3 bg-transparent border border-yellow-400 hover:border-yellow-300 text-yellow-300 font-semibold rounded-lg transition-all duration-300 text-center text-sm"
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600/80 backdrop-blur-md border border-blue-400/20 hover:bg-blue-700/90 hover:border-blue-300/30 text-white font-medium rounded-lg transition-all duration-300 text-sm"
                   >
-                    ✉️ Mail Gönder
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Mail</span>
                   </a>
+                  
+                  <button 
+                    onClick={() => generateVCard(selectedMember)}
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600/80 backdrop-blur-md border border-blue-400/20 hover:bg-blue-700/90 hover:border-blue-300/30 text-white font-medium rounded-lg transition-all duration-300 text-sm"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span>Rehbere Ekle</span>
+                  </button>
                 </div>
               </div>
             </div>
