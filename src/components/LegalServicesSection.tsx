@@ -1,4 +1,5 @@
 import { ScaleIcon, DocumentTextIcon, HomeIcon, UserGroupIcon, CurrencyDollarIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
+import { useNavigate } from 'react-router-dom'
 
 const legalServices = [
   {
@@ -54,6 +55,18 @@ const legalServices = [
 ]
 
 export default function LegalServicesSection() {
+  const navigate = useNavigate()
+
+  const handleContactRedirect = () => {
+    navigate('/iletisim')
+    // Scroll to evaluation section after navigation
+    setTimeout(() => {
+      const evaluationSection = document.getElementById('ucretsiz-on-degerlendirme')
+      if (evaluationSection) {
+        evaluationSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 100)
+  }
   return (
     <div 
       className="overflow-hidden py-24 sm:py-32 relative"
@@ -195,7 +208,10 @@ export default function LegalServicesSection() {
                   </div>
                   
                   {/* Call to action button */}
-                  <button className="mt-6 w-full py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50">
+                  <button 
+                    onClick={handleContactRedirect}
+                    className="mt-6 w-full py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50"
+                  >
                     Detaylı Bilgi Al
                   </button>
                 </div>
