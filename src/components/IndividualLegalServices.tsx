@@ -1,4 +1,5 @@
 import { HomeIcon, ScaleIcon, UserGroupIcon, ShieldCheckIcon, CurrencyDollarIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
+import { useNavigate } from 'react-router-dom'
 
 const services = [
   {
@@ -52,6 +53,18 @@ const services = [
 ]
 
 export default function IndividualLegalServices() {
+  const navigate = useNavigate()
+
+  const handleContactRedirect = () => {
+    navigate('/iletisim')
+    // Scroll to evaluation section after navigation
+    setTimeout(() => {
+      const evaluationSection = document.getElementById('ucretsiz-on-degerlendirme')
+      if (evaluationSection) {
+        evaluationSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 100)
+  }
   return (
     <div 
       className="overflow-hidden py-24 sm:py-32 relative"
@@ -155,7 +168,10 @@ export default function IndividualLegalServices() {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 text-sm">
+                <button 
+                  onClick={handleContactRedirect}
+                  className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 text-sm"
+                >
                   Detaylı Bilgi
                 </button>
 
